@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Hover Effect</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:100,700;);
+
+body {
+  background:linear-gradient(127deg,rgb(99, 97, 94) 0%,rgb(21, 27, 26) 100%) ;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  background-color: rgb(41, 46, 57);
+  color: #fff;
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  margin: 10px;
+  max-width: 400px;
+  min-width: 230px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.container * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.45s ease;
+  transition: all 0.45s ease;
+}
+
+.container:before,
+.container:after {
+  background-color: rgba(46, 52, 64, 0.5);
+  border-right: 50px solid rgba(46, 52, 64, 0.5);
+  border-left: 50px solid rgba(46, 52, 64, 0.5);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '';
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  z-index: 1;
+  opacity: 0;
+}
+
+.container:before {
+  -webkit-transform: scaleY(2);
+  transform: scaleY(2);
+}
+
+.container:after {
+  -webkit-transform: scaleY(2);
+  transform: scaleY(2);
+}
+
+.container img {
+  vertical-align: top;
+  max-width: 100%;
+  backface-visibility: hidden;
+}
+
+.container h3 {
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.container h3 span {
+  display: block;
+  font-weight: 700;
+}
+
+.container a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+
+.container:hover > img,
+.container.hover > img {
+  opacity: 0.7;
+}
+
+.container figcaption {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  align-items: center;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.1em;
+  opacity: 0;
+  z-index: 2;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+.container:hover:before,
+.container.hover:before,
+.container:hover:after,
+.container.hover:after {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+
+.container:hover figcaption,
+.container.hover figcaption {
+  opacity: 1;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+
+    </style>
+  </head>
+  <body>
+    <figure class="container">
+      <img src="images/pic5.jpg" style="width:400px;height:200; " alt="sample70" />
+      <figcaption>
+        <h3>INDIA <span>Sachin Tendulkar</span></h3>
+      </figcaption>
+      <a href="#"></a>
+    </figure>
+  </body>
+</html>
